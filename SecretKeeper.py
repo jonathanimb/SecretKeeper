@@ -24,7 +24,7 @@ def encrypt(data, key):
 	return convert(magic_string + data, key).encode('base64')
 
 def decrypt(data, key):
-	'''decode from base64, decrypt, check magic string (password worked), 
+	'''decode from base64, decrypt, check magic string (password worked),
 	and return without magic string, or returns None if password did not work'''
 	data = convert(data.decode('base64'), key)
 	if data.startswith(magic_string):
