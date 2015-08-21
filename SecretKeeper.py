@@ -41,9 +41,6 @@ for salt_len in SALT_LEN:
 	assert HALF_BLOCK <= salt_len  # we use a subset of the salt as nonce
 
 HEADER_LEN = 4
-for header in HEADER:
-	assert len(header) == HEADER_LEN
-
 
 def encrypt(password, data):
 	'''
