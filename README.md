@@ -18,5 +18,3 @@ In my mind, I separate things by a blank line. Therefore searching for something
 
 After making changes, the Close button becomes a Save&Close button. If you don't want to save your changes, close with the OS (little x on the title bar, usually, or middle click on the Gnome panel).
 
-TODO: I would like to keep this as pure python (no imports that don't ship with python / vanilla linux distros).
-TODO: Improve the encryption. I don't think the XOR encryption is very strong.

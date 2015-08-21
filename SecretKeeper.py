@@ -9,7 +9,7 @@ To change the password, open python terminal
 
 #default key (password) = 'nicol'
 
-geometry = "400x500+300+300" #default
+geometry = "400x500+300+300" #default  
 
 LATEST = 1 # simplecrypt version (0-2). version 2 is better but I prefer speed over security. Change anytime.
 
@@ -103,7 +103,7 @@ def _assert_not_unicode(data):
 	# warn confused users
 	u_type = type(b''.decode('utf8'))
 	if isinstance(data, u_type):
-		raise DecryptionException('Data to decrypt must be bytes; ' +
+		raise DecryptionException('Data to decrypt must be b ytes; ' +
 		'you cannot use a string because no string encoding will accept all possible characters.')
 
 def _assert_encrypt_length(data):
