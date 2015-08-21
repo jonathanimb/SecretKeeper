@@ -1,6 +1,8 @@
 # SecretKeeper
 A single-file python 2 program that stores your secrets.
 
+A clean linux install will require the installation of TkInter and PyCrypto. 
+
 A program that opens a GUI text entry, and saves the encrypted data to itself. Windows takes issues with programs saving themselves, so this is Linux (possibly Mac) only for now.
 
 To change the password (key), you must import from python, since I'm too lazy to make a GUI password changer at the moment:
