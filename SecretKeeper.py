@@ -318,7 +318,7 @@ class PasswordDialog(ttk.Frame):
 	def store_pass(self, event=None):
 		self.parent.key = self.entry.get()
 		if self.parent.key == "":
-			self.quit() #user entered nothing; treat as user cancel
+			self.quit() #user entered nothing; treat as user cancel 
 		try:
 			self.parent.secret = decrypt(self.parent.key,data)
 			self.quit() #correct password
