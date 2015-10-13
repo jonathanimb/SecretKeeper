@@ -28,7 +28,7 @@ from Crypto.Util import Counter
 
 # see: http://www.daemonology.net/blog/2009-06-11-cryptographic-right-answers.html
 
-EXPANSION_COUNT = (10000, 10000, 100000) 
+EXPANSION_COUNT = 10000
 AES_KEY_LEN = 256
 SALT_LEN = (128, 256, 256)
 HASH = SHA256
@@ -57,7 +57,7 @@ def encrypt(password, data):
 	data = _str_to_bytes(data)
 	_assert_encrypt_length(data)
 	salt = bytes(_random_bytes(SALT_LEN[LATEST]//8))
-	hmac_key, cipher_key = _expand_keys(password, salt, EXPANSION_COUNT[LATEST])
+	hmac_key, cipher_key = _expand_keys(password, salt, EXPANSION_COUNT)
 	counter = Counter.new(HALF_BLOCK, prefix=salt[:HALF_BLOCK//8])
 	cipher = AES.new(cipher_key, AES.MODE_CTR, counter=counter)
 	encrypted = cipher.encrypt(data)
@@ -85,7 +85,7 @@ def decrypt(password, data):
 	_assert_decrypt_length(data, version)
 	raw = data[HEADER_LEN:]
 	salt = raw[:SALT_LEN[version]//8]
-	hmac_key, cipher_key = _expand_keys(password, salt, EXPANSION_COUNT[version])
+	hmac_key, cipher_key = _expand_keys(password, salt, EXPANSION_COUNT)
 	hmac = raw[-HASH.digest_size:]
 	hmac2 = _hmac(hmac_key, data[:-HASH.digest_size])
 	_assert_hmac(hmac_key, hmac, hmac2)

@@ -16,7 +16,7 @@ To run, you can provide the password as an argument:
 
 or, if you don't, a dialog will prompt you for the password.
 
-In my mind, I separate things by a blank line. Therefore searching for something displays everything after the found search term until a blank line is encountered.
+In my usage, I separate paragraphs by a blank line. Therefore searching for something displays the entire paragraph it is found in.
 
 After making changes, the Close button becomes a Save&Close button. If you don't want to save your changes, close with the OS (little x on the title bar, usually, or middle click on the Gnome panel).
 
